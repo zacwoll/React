@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+  background-color: #f2f2f2;
+  width: 100%;
+}
+
+.Icon-box {
+  height: 22vmin;
+  padding: 10px;
+  background-color: #282c34;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+  background-color:  #282c34;
+}
+
+.App-header {
+  /* background-color: #282c34; */
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.search-block {
+  padding: 10px,
+}
+
+.search-line {
+  display: inline-block;
+}
