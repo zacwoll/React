@@ -40,3 +40,9 @@
 .search-line {
   display: inline-block;
 }
+
+.search-error {
+  float: left;
+  font-size: 10px;
+  color: red;
+}

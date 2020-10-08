@@ -18,12 +18,13 @@ function App() {
               <TemperatureToggle></TemperatureToggle>
             </div>
             <div className="not-found">
-              <p>City not Found</p>
+              <div className="search-error">City not Found</div>
             </div>
           </div>
         </header>
       </div>
       <hr />
+      
     </div>
   );
 }

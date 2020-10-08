@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: '2px 4px',
-    display: 'flex',
+    display: 'inline-flex',
     alignItems: 'center',
     width: 400,
   },
@@ -33,7 +33,6 @@ export default function CustomizedInputBase() {
       <InputBase
         className={classes.input}
         placeholder="Enter Your City"
-        inputProps={{ 'aria-label': 'search google maps' }}
       />
       <Divider className={classes.divider} orientation="vertical" />
       <Button variant="contained" color="primary" className={classes.iconButton} >

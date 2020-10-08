@@ -5,8 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: 'inline-block',
     alignItems: 'center',
     '& > *': {
       margin: theme.spacing(1),
@@ -20,8 +19,8 @@ export default function BasicButtonGroup() {
   return (
     <div className={classes.root}>
       <ButtonGroup color="primary" aria-label="outlined primary button group">
-        <Button>One</Button>
-        <Button variant="contained">Two</Button>
+        <Button>Metric (c)</Button>
+        <Button variant="contained">Imperial</Button>
       </ButtonGroup>
     </div>
   );
