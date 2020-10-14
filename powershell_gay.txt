@@ -1,0 +1,4 @@
+===
+How to get past unable to run scripts
+===
+powershell -ExecutionPolicy ByPass
