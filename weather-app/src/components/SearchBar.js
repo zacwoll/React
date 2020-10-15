@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -28,14 +28,38 @@ const useStyles = makeStyles((theme) => ({
 export default function CustomizedInputBase() {
   const classes = useStyles();
 
+  let [city, setCity] = useState({
+    city: ''
+  });
+
+  let handleChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    city[name] = value;
+    setCity(city);
+  }
+
+  let search = (e) => {
+    e.preventDefault();
+    // Here is where I want to dispatch my fetch action
+    console.log('City: ' + city.city);
+  }
+
   return (
-    <Paper component="form" className={classes.root}>
+    <Paper component="form" className={classes.root} onSubmit={search}>
       <InputBase
         className={classes.input}
         placeholder="Enter Your City"
+        name="city"
+        onChange={handleChange}
       />
       <Divider className={classes.divider} orientation="vertical" />
-      <Button variant="contained" color="primary" className={classes.iconButton} >
+      <Button
+        variant="contained"
+        color="primary"
+        className={classes.iconButton}
+        onClick={search}
+        >
         Search
       </Button>
     </Paper>
