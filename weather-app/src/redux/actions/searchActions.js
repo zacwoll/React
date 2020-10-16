@@ -1,8 +1,6 @@
 import { FETCH_WEATHER, CITY_UPDATED } from './types';
 
-const apiKey = process.env.apiKey;
-console.log('api: ' + apiKey);
-console.log(process.env)
+const apiKey = 'c1aaa253d90f96a008778808e15dc9ba';
 
 export const fetchWeather = (city) => dispatch => {
     //fetch('http://api.openweathermap.org/data/2.5/weather?q=Livermore&appid=c1aaa253d90f96a008778808e15dc9ba')
