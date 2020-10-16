@@ -1,16 +1,12 @@
 let apiKey = process.env.apiKey;
 
-class MyComponent extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        error: null,
-        isLoaded: false,
-        items: []
-      };
-    }
+class Weather extends React.Component {
+  componentDidUpdate(city) {
+    
+  }
   
     componentDidMount() {
+      // Populate Component with Data
       fetch(`api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apikey}`)
         .then(res => res.json())
         .then(
