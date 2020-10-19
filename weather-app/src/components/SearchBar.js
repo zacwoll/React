@@ -7,6 +7,12 @@ import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import { cityUpdated, fetchWeather } from '../redux/actions/searchActions';
 
+// TODO: make not found component part of search bar, thereby fixing the text placement
+// of the not found component and making it's existence conditional on the component
+// <div className="search-error">City not Found</div>
+
+// I like the color #4f4f50 for the Search Button
+
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: '2px 4px',

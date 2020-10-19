@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
 
+// Hex Code from OpenWeatherMap #66cbbc
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'inline-block',
