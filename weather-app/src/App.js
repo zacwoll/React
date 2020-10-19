@@ -4,6 +4,10 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import TemperatureToggle from './components/TemperatureToggle';
 
+function NotFound(props) {
+  // if weather data (exists) ? render weather component : render not found
+}
+
 function App() {
   return (
     <div className="App">
@@ -17,14 +21,9 @@ function App() {
               <SearchBar></SearchBar>
               <TemperatureToggle></TemperatureToggle>
             </div>
-            <div className="not-found">
-              <div className="search-error">City not Found</div>
-            </div>
           </div>
         </header>
-      </div>
-      <hr />
-      
+      </div>      
     </div>
   );
 }
