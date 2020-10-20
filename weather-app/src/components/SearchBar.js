@@ -65,6 +65,12 @@ function SearchBar({ cityUpdated, fetchWeather }) {
         placeholder="Enter Your City"
         name="city"
         onChange={handleChange}
+        onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              console.log('Enter key pressed');
+              fetchWeather(city.city);
+            }
+        }}
       />
       <Divider className={classes.divider} orientation="vertical" />
       <Button
