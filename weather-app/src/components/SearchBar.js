@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -36,9 +36,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedInputBase() {
+function SearchBar({ cityUpdated, fetchWeather }) {
   const classes = useStyles();
-  const dispatch = useDispatch();
 
   let [city, setCity] = useState({
     city: ''
@@ -54,8 +53,8 @@ export default function CustomizedInputBase() {
   let search = (e) => {
     e.preventDefault();
     // Here is where I want to dispatch my fetch action
-    dispatch(cityUpdated(city.city));
-    dispatch(fetchWeather(city.city));
+    cityUpdated(city.city);
+    fetchWeather(city.city);
     console.log('City: ' + city.city);
   }
 
@@ -79,3 +78,12 @@ export default function CustomizedInputBase() {
     </Paper>
   );
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    cityUpdated: (city) => dispatch(cityUpdated(city)),
+    fetchWeather: (city) => dispatch(fetchWeather(city))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar)

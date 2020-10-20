@@ -3,13 +3,18 @@ import logo from './assets/logo_white_cropped.png';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import TemperatureToggle from './components/TemperatureToggle';
-import WeatherListItem from './components/WeatherListItem';
+import WeatherList from './components/WeatherList';
+import { makeStyles } from '@material-ui/core';
 
-function NotFound(props) {
-  // if weather data (exists) ? render weather component : render not found
-}
+const useStyles = makeStyles({
+  root: {
+    textAlign: "center",
+    height: "100%"
+  }
+});
 
 function App() {
+  const classes = useStyles();
   return (
     <div className="App">
       <header className="App-header">
@@ -24,7 +29,7 @@ function App() {
         </div>
       </header>
       <div>
-        <WeatherListItem></WeatherListItem>
+        <WeatherList></WeatherList>
       </div> 
     </div>
   );
