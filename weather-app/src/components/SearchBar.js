@@ -13,6 +13,9 @@ import { cityUpdated, fetchWeather } from '../redux/actions/searchActions';
 
 // I like the color #4f4f50 for the Search Button
 
+// I think this component can map it's dispatch action to
+// mapDispatchToProps from connect 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: '2px 4px',
