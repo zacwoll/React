@@ -1,15 +1,15 @@
-import { CITY_UPDATED } from '../actions/types';
+import { TOGGLE_TEMPERATURE } from '../actions/types';
 
 const initialState = {
-    city: ''
+    toggle: 'F'
 };
 
 export default function(state = initialState, action) {
     switch(action.type) {
-        case CITY_UPDATED:
+        case TOGGLE_TEMPERATURE:
             return {
                 ...state,
-                city: action.payload
+                toggle: action.payload
             }
         default:
             return state;

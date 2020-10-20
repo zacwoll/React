@@ -2,8 +2,10 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
 
 // Hex Code from OpenWeatherMap #66cbbc
+// Make temperatureToggle an action that gets dispatched by this component
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BasicButtonGroup() {
+export default function TemperatureToggle() {
   const classes = useStyles();
 
   return (
@@ -27,3 +29,11 @@ export default function BasicButtonGroup() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+
+  }
+}
+
+/*export default connect(null, null)(TemperatureToggle());*/
