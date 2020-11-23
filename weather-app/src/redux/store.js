@@ -2,7 +2,10 @@ import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./reducers";
 import thunk from 'redux-thunk';
 
-const initialState = {};
+const initialState = {
+    city: '',
+    toggle: 'F'
+};
 
 const middleware = [thunk];
 

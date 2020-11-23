@@ -7,8 +7,6 @@ import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux';
 
-// TODO: convert degrees to N, NW, W, SW, S, SE, E
-
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: 'auto',

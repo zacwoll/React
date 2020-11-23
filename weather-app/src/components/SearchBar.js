@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
-import { cityUpdated, fetchWeather } from '../redux/actions/searchActions';
+import { fetchWeather } from '../redux/actions/searchActions';
 
 // TODO: make not found component part of search bar, thereby fixing the text placement
 // of the not found component and making it's existence conditional on the component
@@ -36,26 +36,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SearchBar({ cityUpdated, fetchWeather }) {
+function SearchBar({ fetchWeather }) {
   const classes = useStyles();
 
-  let [city, setCity] = useState({
-    city: ''
-  });
+  let [city, setCity] = useState({ city: '' });
 
   let handleChange = (e) => {
-    let name = e.target.name;
     let value = e.target.value;
-    city[name] = value;
-    setCity(city);
+    setCity(value);
   }
 
   let search = (e) => {
     e.preventDefault();
-    // Here is where I want to dispatch my fetch action
-    cityUpdated(city.city);
-    fetchWeather(city.city);
-    console.log('City: ' + city.city);
+    console.log(city.city);
+    if (city.city !== "") {
+      fetchWeather(city);
+    }
   }
 
   return (
@@ -66,9 +62,8 @@ function SearchBar({ cityUpdated, fetchWeather }) {
         name="city"
         onChange={handleChange}
         onKeyPress={(e) => {
-            if (e.key === 'Enter') {
-              console.log('Enter key pressed');
-              fetchWeather(city.city);
+            if (e.key === 'Enter' && city !== '') {
+              return search;
             }
         }}
       />
@@ -87,8 +82,7 @@ function SearchBar({ cityUpdated, fetchWeather }) {
 
 const mapDispatchToProps = dispatch => {
   return {
-    cityUpdated: (city) => dispatch(cityUpdated(city)),
-    fetchWeather: (city) => dispatch(fetchWeather(city))
+    fetchWeather: (city) => dispatch(fetchWeather(city)),
   }
 }
 
