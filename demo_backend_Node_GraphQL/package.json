@@ -1,0 +1,10 @@
+{
+  "name": "demo_backend_Node_GraphQL",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^2.19.2",
+    "express": "^4.17.1"
+  }
+}
